@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/montserrat':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@fontsource/kiwi-maru':
         specifier: ^5.2.5
         version: 5.2.5
@@ -278,6 +281,9 @@ packages:
   '@eslint/plugin-kit@0.2.8':
     resolution: {integrity: sha512-ZAoA40rNMPwSm+AeHpCq8STiNAwzWLJuP8Xv4CHIc9wv/PSuExjMrmjfYNj682vW0OOiZ1HKxzvjQr9XZIisQA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource-variable/montserrat@5.2.5':
+    resolution: {integrity: sha512-Mfg/AiXwhPLAAgLCqzugFUs/PLprbHzXMhPVrf35q5od4/wHjVqtm0bI000tKGUGDZ3gDpId/+cqufcYHAAAEQ==}
 
   '@fontsource/kiwi-maru@5.2.5':
     resolution: {integrity: sha512-ZosG5JFSSdF6kVAj0YcGy9CKGSomHVsaSCJnMvt6tdfIbrg43rp6bAzM45r33KzfJIdRndhz6uMo5yI5ZxHB0g==}
@@ -2775,6 +2781,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.13.0
       levn: 0.4.1
+
+  '@fontsource-variable/montserrat@5.2.5': {}
 
   '@fontsource/kiwi-maru@5.2.5': {}
 
