@@ -9,8 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",
-    "ress": "^5.0.2"
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.31.0",
