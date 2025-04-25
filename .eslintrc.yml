@@ -1,0 +1,41 @@
+---
+env:
+  node: true
+  es2022: true
+  browser: true
+extends:
+  - "eslint:recommended"
+  - "plugin:import/typescript"
+  - "plugin:astro/recommended"
+  - "prettier"
+parserOptions:
+  ecmaVersion: "latest"
+  sourceType: "module"
+  project: "./tsconfig.json"
+globals:
+  astroHTML: true
+plugins:
+  - "@typescript-eslint"
+  - "import"
+rules:
+  import/order:
+    - 2
+    - newlines-between: always
+      alphabetize:
+        order: asc
+        caseInsensitive: true
+      warnOnUnassignedImports: true
+overrides:
+  - files: ["*.astro"]
+    parser: "astro-eslint-parser"
+    parserOptions:
+      parser: "@typescript-eslint/parser"
+      extraFileExtensions: [".astro"]
+    rules:
+      astro/no-set-html-directive: "error"
+      astro/no-set-text-directive: "error"
+      astro/no-unused-css-selector: "error"
+      astro/jsx-a11y/alt-text: "error"
+      astro/jsx-a11y/control-has-associated-label: "error"
+  - files: ["*.ts"]
+    parser: "@typescript-eslint/parser"
