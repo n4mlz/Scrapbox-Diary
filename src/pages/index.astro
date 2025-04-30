@@ -4,7 +4,11 @@ import Content from "@content/sample.md";
 ---
 
 <Layout>
-  <div class="min-h-screen w-full bg-[url('/background.png')] bg-cover bg-center">
-    <Content />
+  <div class="flex h-screen w-screen bg-[url('/background.png')] bg-cover bg-fixed bg-center">
+    <div class="flex grow justify-center">
+      <div class="mx-3 my-6 max-w-2xl grow overflow-auto bg-white p-6">
+        <Content />
+      </div>
+    </div>
   </div>
 </Layout>
