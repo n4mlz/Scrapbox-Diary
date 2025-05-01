@@ -6,8 +6,10 @@ import Content from "@content/sample.md";
 <Layout>
   <div class="flex h-screen w-screen bg-[url('/background.png')] bg-cover bg-fixed bg-center">
     <div class="flex grow justify-center">
-      <div class="mx-3 my-6 max-w-2xl grow overflow-auto bg-white p-6">
-        <Content />
+      <div class="mx-3 my-6 flex max-w-2xl grow bg-white p-6">
+        <div class="grow overflow-auto">
+          <Content />
+        </div>
       </div>
     </div>
   </div>
