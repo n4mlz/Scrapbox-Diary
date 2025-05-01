@@ -1,7 +1,21 @@
 services:
+  builder:
+    container_name: builder
+    build:
+      context: .
+      args:
+        - PROJECT_NAME=${PROJECT_NAME}
+        - PAGE_TITLE=${PAGE_TITLE}
+        - CONNECT_SID=${CONNECT_SID}
+    volumes:
+      - ./dist:/app/dist
   web:
     image: nginx:alpine
     ports:
       - "8080:80"
     volumes:
       - ./dist:/usr/share/nginx/html
+    depends_on:
+      builder:
+        condition: service_completed_successfully
+    restart: always
