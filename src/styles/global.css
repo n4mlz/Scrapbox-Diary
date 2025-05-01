@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@layer base {
+  ul {
+    @apply list-disc pl-5;
+  }
+
+  li {
+    @apply py-0;
+  }
+
+  .main > ul {
+    @apply list-none pl-0;
+    & > li {
+      @apply py-4;
+    }
+  }
+}
