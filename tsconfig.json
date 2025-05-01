@@ -7,7 +7,6 @@
     "paths": {
       "@public/*": ["./public/*"],
       "src/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
       "@content/*": ["./src/content/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
