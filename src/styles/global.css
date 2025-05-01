@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 @layer base {
+  a {
+    @apply text-blue-500 no-underline;
+    &:hover {
+      @apply underline;
+    }
+  }
+
   ul {
     @apply list-disc pl-5;
   }
@@ -13,13 +20,6 @@
     @apply list-none pl-0;
     & > li {
       @apply py-2;
-    }
-  }
-
-  a {
-    @apply text-blue-500 no-underline;
-    &:hover {
-      @apply underline;
     }
   }
 }
