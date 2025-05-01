@@ -12,7 +12,7 @@
   .main > ul {
     @apply list-none pl-0;
     & > li {
-      @apply py-4;
+      @apply py-2;
     }
   }
 }
