@@ -22,4 +22,4 @@ ENV CONNECT_SID=${CONNECT_SID}
 
 # inject scrapbox content and saved at /app/dist
 RUN apt update && apt install -y curl
-ENTRYPOINT [ "sh", "-c", "curl https://scrapbox.io/api/pages/${PROJECT_NAME}/${PAGE_TITLE}/text -b \"connect.sid=${CONNECT_SID}\" | npx @hogashi/sb2md@latest | sed '1d' > /app/src/content/daily.md && pnpm run build"]
+ENTRYPOINT [ "sh", "-c", "curl https://scrapbox.io/api/pages/${PROJECT_NAME}/${PAGE_TITLE}/text -b \"connect.sid=${CONNECT_SID}\" | npx @hogashi/sb2md@latest | sed '1d' > /app/src/content/diary.md && pnpm run build"]
