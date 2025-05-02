@@ -1,48 +1,36 @@
-# Astro Starter Kit: Basics
+# 📘 Scrapbox Diary
 
-```sh
-pnpm create astro@latest -- --template basics
+Scrapbox Diary は、プライベートな Scrapbox プロジェクトに書かれた日記ページを整形し、ウェブサイトとして公開できるツールです。
+Scrapbox のページは、自動で同期させることができます。
+
+![web-screenshot](assets/web-screenshot.png)
+
+<details>
+
+<summary>元の Scprapbox ページのスクリーンショット</summary>
+
+![scrapbox-screenshot](assets/scrapbox-screenshot.png)
+
+</details>
+
+## ⚙️ Architecture
+
+このプロジェクトは、compose.yml で以下の2つのサービスを定義しています：
+
+- builder：Scrapbox からページを取得し、データを注入して Astro で静的サイトをビルドします。
+- web：ビルド済みサイトを配信する簡易ウェブサーバです。
+
+## 🚀 Usage
+
+builder が定期的に実行されるように cron を設定することで、任意の頻度でページを自動更新できます。
+
+```
+$ git clone https://github.com/n4mlz/scrapbox_diary.git
+$ cd scrapbox_diary
+$ docker compose up -d # builderとwebの起動
+$ (crontab -l ; echo "0 * * * * cd /path/to/scrapbox_diary && docker compose up builder")| crontab - # 1時間おきにbuilderを実行
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 📜 License
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+このプロジェクトは MIT License のもとで公開されています。
