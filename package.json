@@ -2,6 +2,7 @@
   "name": "scrapbox_diary",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@11.9.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,6 +12,7 @@
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.2.5",
     "@fontsource/kiwi-maru": "^5.2.5",
+    "@hogashi/sb2md": "0.3.2",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",
     "sharp": "^0.34.1",

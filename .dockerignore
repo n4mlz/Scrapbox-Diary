@@ -1,6 +1,11 @@
+# Exclude local credentials, diary content, and development files from the image.
 .git
 .env
 .env.*
 dist
 node_modules
 src/content/diary.md
+assets
+.github
+.vscode
+README.md
