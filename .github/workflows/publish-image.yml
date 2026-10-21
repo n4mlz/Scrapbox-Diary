@@ -1,3 +1,4 @@
+# This workflow publishes an image when application source changes.
 name: Publish container image
 
 on:
