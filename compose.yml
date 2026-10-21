@@ -3,10 +3,7 @@ services:
     container_name: builder
     build:
       context: .
-      args:
-        - PROJECT_NAME=${PROJECT_NAME}
-        - PAGE_TITLE=${PAGE_TITLE}
-        - CONNECT_SID=${CONNECT_SID}
+    env_file: .env
     volumes:
       - ./dist:/app/dist
   web:
