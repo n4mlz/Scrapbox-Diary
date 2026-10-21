@@ -1,0 +1,32 @@
+name: Publish container image
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/n4mlz/scrapbox-diary:latest
+            ghcr.io/n4mlz/scrapbox-diary:sha-${{ github.sha }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/n4mlz/Scrapbox-Diary
